@@ -103,3 +103,5 @@ VALUES
       1
     )
     ;
+
+    COMMIT;

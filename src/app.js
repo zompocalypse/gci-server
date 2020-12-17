@@ -5,6 +5,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 const authRouter = require('./auth/auth-router');
+const recipesRouter = require('./recipes/recipes-router');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(morgan(morganOption));
 app.use(helmet());
 
 app.use('/api/auth', authRouter);
+app.use('/api/recipes', recipesRouter);
 
 app.use(errorHandler);
 
